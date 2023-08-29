@@ -1,0 +1,22 @@
+¿que hook de react utilizamos para definir el estado inicial de un componente?
+
+el hook use state nos permite definir el estado inicial de un componente
+para utilizarlo debemos importarlo de react y luego definir una constante que contenga el estado inicial y 
+una funcion que nos permita modificar el estado
+ ej:
+
+  import {useState} from 'react';
+
+  const [state, setState] = useState();
+
+si necesitamos implementar un boton que al darle click muestre un mensaje en la consola del navegador ¿que evento utilizarias?
+
+utilizaria el evento onClick
+
+ej:
+
+  <button onClick={() => console.log('hola mundo')}>Click me</button>
+
+¿que tipo de datos podemos almacenar en un estado inicial de un componente de react?
+
+podemos almacenar cualquier tipo de dato, ya sea un string, un numero, un objeto, un array, etc.
