@@ -2,20 +2,22 @@ import { useState } from "react";
 
 const Ejercicio2AagregandoElementosDesdeFomr = () => {
   const initTask = ["tarea1", "tarea2", "tarea3"];
-  const [name, setName] = useState("");
+  const [nameTask, setNameTask] = useState("");
+
   const [tasks, setTasks] = useState(initTask);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTasks([...tasks, name]);
+    setTasks([...tasks, nameTask]);
   };
+
   return (
     <>
       <h2>Formulario</h2>
 
       <form onSubmit={handleSubmit}>
         <label>TASK:</label>
-        <input type="text" onChange={(e) => setName(e.target.value)} />
+        <input type="text" onChange={(e) => setNameTask(e.target.value)} />
         <button type="submit">enviar</button>
       </form>
 

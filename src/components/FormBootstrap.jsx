@@ -40,16 +40,16 @@ const FormBootstrap = () => {
     setDescripcionTarea("");
   };
 
-  const completarTarea = (tarea) => {
+  const completarTarea = (id) => {
     const nuevasTareas = [...listaTareas];
-    const index = nuevasTareas.findIndex((task) => task.id === tarea.id); //cambiar por id
+    const index = nuevasTareas.findIndex((task) => task.id === id); //cambiar por id
     nuevasTareas[index].completada = true;
     setListaTareas(nuevasTareas);
   };
 
-  const eliminarTarea = (tarea) => {
+  const eliminarTarea = (id) => {
     const listaFiltrada = listaTareas.filter(
-      (task) => task.id !== tarea.id
+      (task) => task.id !== id
     );
     setListaTareas(listaFiltrada);
   };
@@ -109,7 +109,7 @@ const FormBootstrap = () => {
                     <div>
                       <Button
                         variant="success"
-                        onClick={() => completarTarea(tarea)}
+                        onClick={() => completarTarea(tarea.id)}
                       >
                         {" "}
                         Completar{" "}
@@ -121,7 +121,7 @@ const FormBootstrap = () => {
                   <div>
                     <Button
                       variant="danger"
-                      onClick={() => eliminarTarea(tarea)}
+                      onClick={() => eliminarTarea(tarea.id)}
                     >
                       {" "}
                       Borrar
